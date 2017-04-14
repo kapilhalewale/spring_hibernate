@@ -3,6 +3,7 @@ package com.kapil.init;
  *  Author : Kapil Kumar;
  * This class is a replacement of spring-dispatcher-servlet.xml file
  */
+import java.util.List;
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -15,6 +16,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -51,7 +56,16 @@ public class ApplicationConfig  extends WebMvcConfigurerAdapter
 	{
 		configurer.enable();
 	}
-	
+	// For JSON and XML response Configuration
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+    {
+        Jackson2ObjectMapperBuilder builder = Jackson2ObjectMapperBuilder.xml();
+        builder.indentOutput(true);
+        converters.add(new MappingJackson2XmlHttpMessageConverter(builder.build()));
+        converters.add(new MappingJackson2HttpMessageConverter());
+    }
+    
 	  @Bean
 	   public LocalSessionFactoryBean sessionFactory()
 	  {
@@ -87,7 +101,8 @@ public class ApplicationConfig  extends WebMvcConfigurerAdapter
 	      return new PersistenceExceptionTranslationPostProcessor();
 	   }
 	 
-	   Properties hibernateProperties()
+	@SuppressWarnings("serial")
+	Properties hibernateProperties()
 	   {
 	      return new Properties() {
 	         {

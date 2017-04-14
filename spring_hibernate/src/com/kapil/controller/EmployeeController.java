@@ -1,4 +1,8 @@
 package com.kapil.controller;
+/*
+ *  Author : H Kapil Kumar;
+ * Spring Controller class to map the related actions
+ */
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
@@ -59,5 +63,12 @@ public class EmployeeController extends CommonController
 	    	employeeDao.dropEmployee(id);
 	    	httpServletResponse.sendRedirect(getBasePath()+"/employee/employees");
 	    } 
+	  
+	    @RequestMapping(value= "/entities")    
+	    public String entities(ModelMap model)
+	    {
+	        model.addAttribute("entities", employeeDao.getEntities());
+	        return "entity_list";
+	    }
 }
 
