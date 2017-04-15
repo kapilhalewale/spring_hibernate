@@ -13,6 +13,8 @@
  
 <link rel="stylesheet" type="text/css" href="${url}/resources/css/style.css">
 <link rel="stylesheet" type="text/css" href="${url}/resources/css/flat-blue.css">
+<link rel="stylesheet" type="text/css" href="${url}/resources/css/parsley.css">
+<link rel="stylesheet" type="text/css" href="${url}/resources/css/chosen.min.css">
 
 
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">

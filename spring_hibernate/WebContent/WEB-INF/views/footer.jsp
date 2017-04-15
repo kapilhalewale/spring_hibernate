@@ -10,11 +10,13 @@
 <script type="text/javascript" src="${url }/resources/js/jquery.js"></script>
 <script type="text/javascript" src="${url }/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${url }/resources/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="${url }/resources//assets/js/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="${url }/resources//assets/js/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="${url }/resources//assets/js/ace/ace.js"></script>
-<script type="text/javascript" src="${url }/resources//assets/js/ace/mode-html.js"></script>
-<script type="text/javascript" src="${url }/resources//assets/js/ace/theme-github.js"></script>
+<script type="text/javascript" src="${url }/resources/assets/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="${url }/resources/assets/js/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="${url }/resources/assets/js/ace/ace.js"></script>
+<script type="text/javascript" src="${url }/resources/assets/js/ace/mode-html.js"></script>
+<script type="text/javascript" src="${url }/resources/assets/js/ace/theme-github.js"></script>
+<script type="text/javascript" src="${url }/resources/js/parsley.js"></script>
+<script type="text/javascript" src="${url }/resources/js/chosen.jquery.min.js"></script>
 
 <script>
 $("#date").datepicker({
@@ -25,4 +27,6 @@ $("#date").datepicker({
 	{
 		window.open(""+val, "", "width=600,height=600");
 	}
+	
+	$(".chosen").chosen();
 </script>

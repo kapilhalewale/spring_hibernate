@@ -29,15 +29,15 @@
                             <div class="card">
                                 <div class="card-body" style="height:450px;">  
 									<div class="clear-both"></div>
-										<form:form action="${basePath }/employee/save-employee" method="post" modelAttribute="employee" ccsClass="form-horizontal" >
+										<form:form action="${basePath }/employee/save-employee" method="post" modelAttribute="employee" class="form-horizontal" data-parsley-validate=""  id="pform">
 											<div class="form-group">
 												<label class="col-md-2 control-label">Name<span class="mandatory">*</span></label>
 												<div class="col-md-4">
-													<form:input path="name" class="form-control"/>
+													<form:input path="name" class="form-control" data-parsley-pattern="/^[a-zA-Z ]+$/" required=""/>
 												</div>
 												<label class="col-md-2 control-label">Code<span class="mandatory">*</span></label>
 												<div class="col-md-4">
-													<form:input path="code" class="form-control"/>
+													<form:input path="code" class="form-control" data-parsley-pattern="/^[a-zA-Z ]+$/"   required=""/>
 												</div>                                            
 											</div>
 											<div class="form-group">
@@ -47,13 +47,13 @@
 												</div>                                            
 												<label class="col-md-2 control-label">Date Of Joining</label>
 												<div class="col-md-4">
-													<form:input path="dateOfJoining" id="date" class="form-control"/>
+													<form:input path="dateOfJoining" id="date" class="form-control" required=""/>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-2 control-label">Entity<span class="mandatory">*</span></label>
 												<div class="col-md-4">
-													<form:select path="entity.id"  items="${entities}" itemValue="id"  itemLabel="name"  cssClass="form-control"> </form:select> 
+													<form:select path="entity.id"  items="${entities}" itemValue="id"  itemLabel="name"  class="form-control chosen" required="" > </form:select> 
 												</div>                                            
 											</div>
 											<div class="form-group">

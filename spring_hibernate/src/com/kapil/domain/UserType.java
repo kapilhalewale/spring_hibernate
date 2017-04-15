@@ -1,37 +1,46 @@
 package com.kapil.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@javax.persistence.Entity
-@Table(name="entity")
-public class Entity implements Serializable
+@Entity
+@Table(name="user_type")
+public class UserType
 {
-	private static final long serialVersionUID = -8177605505200545692L;
-	
-	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy= GenerationType.AUTO)
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column
+    @Column
 	private String name;
-	    
+	
+    @Column
+	private String code;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

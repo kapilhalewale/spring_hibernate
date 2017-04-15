@@ -73,4 +73,3 @@ public class EmployeeDaoImpl extends GenericClass implements EmployeeDao
 		return entities;
 	}
 }
-

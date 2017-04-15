@@ -24,7 +24,7 @@
 						<h4 class="username">swdd
 						<p>swswsw</p>
 						<div class="btn-group margin-bottom-2x" role="group">
-							<a href="Logout"><button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button></a>
+							<a href="${basePath}/logout"><button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Logout</button></a>
 						</div>
 					</div>
 				</li>
